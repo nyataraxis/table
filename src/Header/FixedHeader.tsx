@@ -8,6 +8,7 @@ export interface FixedHeaderProps<RecordType> extends HeaderProps<RecordType> {
   colWidths: number[];
   columCount: number;
   direction: 'ltr' | 'rtl';
+  fixHeader: boolean
 }
 
 function FixedHeader<RecordType>({
@@ -17,6 +18,7 @@ function FixedHeader<RecordType>({
   columCount,
   stickyOffsets,
   direction,
+  fixHeader,
   ...props
 }: FixedHeaderProps<RecordType>) {
   const { prefixCls, scrollbarSize } = React.useContext(TableContext);
@@ -31,7 +33,7 @@ function FixedHeader<RecordType>({
   };
 
   const columnsWithScrollbar = React.useMemo<ColumnsType<RecordType>>(
-    () => (scrollbarSize ? [...columns, ScrollBarColumn] : columns),
+    () => (scrollbarSize && fixHeader ? [...columns, ScrollBarColumn] : columns),
     [scrollbarSize, columns],
   );
 
