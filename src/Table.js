@@ -231,6 +231,28 @@ class Table extends React.Component {
     }
   }
 
+    isTableLayoutFixed() {
+    const { tableLayout, columns = [], useFixedHeader, scroll = {} } = this.props;
+    if (typeof tableLayout !== 'undefined') {
+      return tableLayout === 'fixed';
+    }
+    // if one column is ellipsis, use fixed table layout to fix align issue
+    if (columns.some(({ ellipsis }) => !!ellipsis)) {
+      return true;
+    }
+    // if header fixed, use fixed table layout to fix align issue
+    if (useFixedHeader || scroll.y) {
+      return true;
+    }
+    // if scroll.x is number/px/% width value, we should fixed table layout
+    // to avoid long word layout broken issue
+    if (scroll.x && scroll.x !== true && scroll.x !== 'max-content') {
+      return false;
+    }
+    return false;
+  }
+
+
   handleWindowResize = () => {
     this.syncFixedTableRowHeight();
     this.setScrollPositionClassName();

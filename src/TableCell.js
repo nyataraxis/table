@@ -90,11 +90,18 @@ export default class TableCell extends React.Component {
     }
 
     if (column.align) {
-      tdProps.style = { ...tdProps.style, textAlign: column.align };
+      tdProps.style = {
+        textAlign: column.align,
+        ...tdProps.style,
+      };
     }
+    const cellClassName = classNames(className, {
+      [`${prefixCls}-cell-ellipsis`]: !!column.ellipsis,
+      [`${prefixCls}-cell-break-word`]: !!column.width,
+    });
 
     return (
-      <BodyCell className={className} onClick={this.handleClick} {...tdProps}>
+      <BodyCell className={cellClassName} onClick={this.handleClick} {...tdProps}>
         {indentText}
         {expandIcon}
         {text}
