@@ -1,10 +1,10 @@
 /* eslint-disable no-console,func-names,react/no-multi-comp */
 import React from 'react';
 import ReactDOM from 'react-dom';
-import Table from 'rc-table';
+import Table from '@gostgroup/rc-table';
 import Animate from 'rc-animate';
-import 'rc-table/assets/index.less';
-import 'rc-table/assets/animation.less';
+import '@gostgroup/rc-table/assets/index.less';
+import '@gostgroup/rc-table/assets/animation.less';
 
 const AnimateBody = props => <Animate transitionName="move" component="tbody" {...props} />;
 

@@ -37,7 +37,7 @@ http://react-component.github.io/table/examples/
 ## Usage
 
 ```js
-import Table from 'rc-table';
+import Table from '@gostgroup/rc-table';
 
 const columns = [{
   title: 'Name', dataIndex: 'name', key:'name', width: 100,

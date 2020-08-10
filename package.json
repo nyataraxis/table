@@ -1,6 +1,6 @@
 {
   "name": "@gostgroup/rc-table",
-  "version": "6.4.10",
+  "version": "6.4.12",
   "description": "table ui component for react remastered for gostgroup",
   "files": [
     "assets/*.css",

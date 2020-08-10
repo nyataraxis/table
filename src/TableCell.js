@@ -1,6 +1,7 @@
 import React from 'react';
 import PropTypes from 'prop-types';
 import get from 'lodash/get';
+import classNames from 'classnames';
 
 function isInvalidRenderCellText(text) {
   return (
@@ -23,10 +24,7 @@ export default class TableCell extends React.Component {
   };
 
   handleClick = e => {
-    const {
-      record,
-      column: { onCellClick },
-    } = this.props;
+    const { record, column: { onCellClick } } = this.props;
     if (onCellClick) {
       onCellClick(record, e);
     }

@@ -1,9 +1,9 @@
 /* eslint-disable no-console,func-names,react/no-multi-comp */
 import React from 'react';
 import ReactDOM from 'react-dom';
-import Table from 'rc-table';
-import 'rc-table/assets/index.less';
-import 'rc-table/assets/bordered.less';
+import Table from '@gostgroup/rc-table';
+import '@gostgroup/rc-table/assets/index.less';
+import '@gostgroup/rc-table/assets/bordered.less';
 
 const columns = [
   {
