@@ -27,43 +27,12 @@ import {
   Expander,
 } from './interface';
 
-export interface TableProps<ValueType>
-  extends Omit<ExpandableTableProps<ValueType>, 'prefixCls' | 'children'> {
-  data?: ValueType[];
-  useFixedHeader?: boolean;
-  columns?: ColumnType[];
-  prefixCls?: string;
-  bodyStyle?: React.CSSProperties;
-  className?: string;
-  style?: React.CSSProperties;
-  rowKey?: string | GetRowKey<ValueType>;
-  rowClassName?: string | ((record: ValueType, index: number, indent: number) => string);
-  onRow?: GetComponentProps<ValueType>;
-  onHeaderRow?: GetComponentProps<ColumnType[]>;
-  onRowClick?: LegacyFunction<ValueType>;
-  onRowDoubleClick?: LegacyFunction<ValueType>;
-  onRowContextMenu?: LegacyFunction<ValueType>;
-  onRowMouseEnter?: LegacyFunction<ValueType>;
-  onRowMouseLeave?: LegacyFunction<ValueType>;
-  showHeader?: boolean;
-  title?: (data: ValueType[]) => React.ReactNode;
-  id?: string;
-  footer?: (data: ValueType[]) => React.ReactNode;
-  emptyText?: React.ReactNode | (() => React.ReactNode);
-  scroll?: { x?: number | true | string; y?: number };
-  rowRef?: (record: ValueType, index: number, indent: number) => React.Ref<React.ReactElement>;
-  getBodyWrapper?: (body: React.ReactElement) => React.ReactElement;
-  children?: React.ReactNode;
-  components?: TableComponents;
-  tableLayout?: 'fixed';
-}
-
 interface TableState {
   columns?: ColumnType[];
   children?: React.ReactNode;
 }
 
-class Table<ValueType> extends React.Component<TableProps<ValueType>, TableState> {
+class Table<ValueType> extends React.Component<any> {
   static childContextTypes = {
     table: PropTypes.any,
     components: PropTypes.any,
@@ -89,7 +58,7 @@ class Table<ValueType> extends React.Component<TableProps<ValueType>, TableState
     emptyText: () => 'No Data',
   };
 
-  constructor(props: TableProps<ValueType>) {
+  constructor(props: any) {
     super(props);
 
     [
@@ -178,7 +147,7 @@ class Table<ValueType> extends React.Component<TableProps<ValueType>, TableState
     };
   }
 
-  static getDerivedStateFromProps(nextProps: TableProps<DefaultValueType>, prevState: TableState) {
+  static getDerivedStateFromProps(nextProps: any, prevState: TableState) {
     if (nextProps.columns && nextProps.columns !== prevState.columns) {
       return {
         columns: nextProps.columns,

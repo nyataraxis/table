@@ -67,14 +67,14 @@ export interface Expander<ValueType = DefaultValueType> {
   handleExpandChange: any;
   renderRows: (
     renderRows: any,
-    rows: React.ReactElement[],
+    rows: any,
     record: ValueType,
     index: number,
     indent: number,
     fixed: FixedType,
     key: Key,
     ancestorKeys: Key[],
-  ) => React.ReactElement[];
+  ) => any;
   renderExpandIndentCell: (rows: Cell[][], fixed: FixedType) => void;
 }
 
@@ -131,7 +131,7 @@ export type RenderRows<ValueType> = (
   renderData: ValueType[],
   indent: number,
   ancestorKeys?: Key[],
-) => React.ReactElement[];
+) => any;
 
 export type ExpandedRowRender<ValueType> = (
   record: ValueType,

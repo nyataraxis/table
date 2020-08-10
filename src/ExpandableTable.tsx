@@ -18,7 +18,7 @@ import ColumnManager from './ColumnManager';
 
 export type RenderTableRows<ValueType> = (
   renderRows: RenderRows<ValueType>,
-  rows: React.ReactElement[],
+  rows: any,
   record: ValueType,
   index: number,
   indent: number,
