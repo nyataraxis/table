@@ -1,5 +1,5 @@
 {
-  "name": "@gostgroup/rc-table",
+  "name": "@sahbg/rc-table",
   "version": "6.10.104",
   "description": "table ui component for react",
   "keywords": [
@@ -10,8 +10,7 @@
     "ui"
   ],
   "publishConfig": {
-    "registry": "http://nexus.gost-group.com/repository/gp-npm-private/",
-    "scope": "gostgroup"
+    "@sahbg:registry": "https://gitlab.com/api/v4/projects/22839189/packages/npm/"
   },
   "files": [
     "assets/*.css",
@@ -61,7 +60,7 @@
     "immutability-helper": "=3.0.0",
     "less": "=3.10.3",
     "np": "=5.1.0",
-    "pre-commit": "^1.2.2",
+    "pre-commit": "=1.2.2",
     "prettier": "=1.11.1",
     "rc-animate": "=2.3.0",
     "rc-dropdown": "=2.0.1",
